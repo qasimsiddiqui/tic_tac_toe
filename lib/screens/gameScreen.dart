@@ -76,7 +76,7 @@ class _GameScreenState extends State<GameScreen> {
                   child: SizedBox(
                     height: 5,
                     child: Container(
-                      width: deviceWidth * 0.7,
+                      width: deviceWidth * 0.75,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         color: Color(0xFF2C6171),
@@ -117,7 +117,7 @@ class _GameScreenState extends State<GameScreen> {
                   child: SizedBox(
                     height: 5,
                     child: Container(
-                      width: deviceWidth * 0.7,
+                      width: deviceWidth * 0.75,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         color: Color(0xFF2C6171),
