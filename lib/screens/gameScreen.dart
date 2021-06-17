@@ -1,5 +1,13 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tic_tac_toe/widgets/grid.dart';
+
+final turnProvider = StateProvider<int>((ref) {
+  int numb = Random().nextInt(10);
+  return numb > 5 ? 1 : 2;
+});
 
 class GameScreen extends StatefulWidget {
   @override
