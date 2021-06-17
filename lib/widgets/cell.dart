@@ -20,11 +20,13 @@ class Cell extends StatelessWidget {
             color: Color(0xFF15ADAD),
           ),
           child: Icon(
+            // Player 1 : X (Icons.close)
+            // Player 2 : O (Icons.panorama_fish_eye)
             watch(turnProvider).state == 1
                 ? Icons.close
                 : Icons.panorama_fish_eye,
             size: 45,
-          ), //Icons.close,,, Icons.panorama_fish_eye
+          ),
         ),
         onTap: () {
           int numb = watch(turnProvider).state;
@@ -34,7 +36,7 @@ class Cell extends StatelessWidget {
           else
             context.read(turnProvider).state = 1;
 
-          print("Turn Player : $numb");
+          print("Player $numb's turn done.");
         },
       ),
     );
