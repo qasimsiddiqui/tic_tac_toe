@@ -4,8 +4,9 @@ import 'package:tic_tac_toe/screens/gameScreen.dart';
 
 class Cell extends StatelessWidget {
   final double deviceWidth;
+  final int gridIndex;
 
-  const Cell(this.deviceWidth);
+  const Cell({required this.deviceWidth, required this.gridIndex});
 
   @override
   Widget build(BuildContext context) {

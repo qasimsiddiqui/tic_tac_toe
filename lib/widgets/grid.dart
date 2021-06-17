@@ -23,19 +23,28 @@ class Grid extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Cell(deviceWidth),
+              Cell(
+                deviceWidth: deviceWidth,
+                gridIndex: 0,
+              ),
               SizedBox(
                 width: 5,
                 child: Container(
                     height: deviceWidth * 0.215, decoration: boxDecoration),
               ),
-              Cell(deviceWidth),
+              Cell(
+                deviceWidth: deviceWidth,
+                gridIndex: 1,
+              ),
               SizedBox(
                 width: 5,
                 child: Container(
                     height: deviceWidth * 0.215, decoration: boxDecoration),
               ),
-              Cell(deviceWidth)
+              Cell(
+                deviceWidth: deviceWidth,
+                gridIndex: 2,
+              )
             ],
           ),
           Padding(
@@ -49,19 +58,28 @@ class Grid extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Cell(deviceWidth),
+              Cell(
+                deviceWidth: deviceWidth,
+                gridIndex: 3,
+              ),
               SizedBox(
                 width: 5,
                 child: Container(
                     height: deviceWidth * 0.215, decoration: boxDecoration),
               ),
-              Cell(deviceWidth),
+              Cell(
+                deviceWidth: deviceWidth,
+                gridIndex: 4,
+              ),
               SizedBox(
                 width: 5,
                 child: Container(
                     height: deviceWidth * 0.215, decoration: boxDecoration),
               ),
-              Cell(deviceWidth)
+              Cell(
+                deviceWidth: deviceWidth,
+                gridIndex: 5,
+              )
             ],
           ),
           Padding(
@@ -77,7 +95,10 @@ class Grid extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Cell(deviceWidth),
+              Cell(
+                deviceWidth: deviceWidth,
+                gridIndex: 6,
+              ),
               SizedBox(
                 width: 5,
                 child: Container(
@@ -85,7 +106,10 @@ class Grid extends StatelessWidget {
                   decoration: boxDecoration,
                 ),
               ),
-              Cell(deviceWidth),
+              Cell(
+                deviceWidth: deviceWidth,
+                gridIndex: 7,
+              ),
               SizedBox(
                 width: 5,
                 child: Container(
@@ -93,7 +117,10 @@ class Grid extends StatelessWidget {
                   decoration: boxDecoration,
                 ),
               ),
-              Cell(deviceWidth)
+              Cell(
+                deviceWidth: deviceWidth,
+                gridIndex: 8,
+              )
             ],
           )
         ],
