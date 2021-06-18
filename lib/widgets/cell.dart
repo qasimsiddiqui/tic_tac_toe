@@ -59,36 +59,30 @@ class Cell extends StatelessWidget {
           print(grid);
 
           int playerWon = checkWin(grid);
-          if (playerWon == 1)
+          if (playerWon != 0)
             showDialog(
+                barrierDismissible: false,
                 context: context,
-                builder: (_) => AlertDialog(
-                      title: Text("Player 1 Won!"),
-                      actions: [
-                        TextButton(
-                          child: Text('Okay'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        )
-                      ],
-                    ));
-          if (playerWon == 2)
-            showDialog(
-                context: context,
-                builder: (_) => AlertDialog(
-                      title: Text("Player 2 Won!"),
-                      actions: [
-                        TextButton(
-                          child: Text('Okay'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        )
-                      ],
-                    ));
+                builder: (_) => showWinDialog(context, playerWon));
         },
       ),
+    );
+  }
+
+  AlertDialog showWinDialog(BuildContext context, int player) {
+    return AlertDialog(
+      title: Text("Player $player Won!"),
+      actions: [
+        TextButton(
+          child: Text('Restart'),
+          onPressed: () {
+            context.read(gridManager).state =
+                new List.filled(9, 0, growable: false);
+            Navigator.of(context).pop();
+            Navigator.of(context).pop();
+          },
+        )
+      ],
     );
   }
 }
