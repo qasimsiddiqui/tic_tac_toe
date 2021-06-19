@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tic_tac_toe/widgets/grid.dart';
+
+// Provider to manage player's turns.
+final turnProvider = StateProvider<int>((ref) => 1);
+
+final gridManager = StateProvider((ref) => List.filled(9, 0, growable: false));
 
 class GameScreen extends StatefulWidget {
   @override
