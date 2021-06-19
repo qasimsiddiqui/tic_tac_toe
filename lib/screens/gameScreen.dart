@@ -24,10 +24,44 @@ class _GameScreenState extends State<GameScreen> {
       appBar: AppBar(
         title: Text("GameScreen"),
       ),
-      body: Center(
-        child: Padding(
+      body: Consumer(
+        builder: (context, watch, _) => Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Grid(deviceWidth),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: watch(turnProvider).state == 1
+                        ? Colors.purple
+                        : Colors.blue[300]),
+                padding: EdgeInsets.all(15),
+                child: Text('Player 1 :: X',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w600,
+                    )),
+              ),
+              Center(child: Grid(deviceWidth)),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: watch(turnProvider).state == 1
+                      ? Colors.blue[300]
+                      : Colors.purple,
+                ),
+                padding: EdgeInsets.all(15),
+                child: Text('Player 2 :: O',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w600,
+                    )),
+              ),
+              SizedBox(height: deviceWidth * 0.2),
+            ],
+          ),
         ),
       ),
     );

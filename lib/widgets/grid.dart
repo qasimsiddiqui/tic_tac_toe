@@ -18,11 +18,6 @@ class Grid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var boxDecoration = BoxDecoration(
-      borderRadius: BorderRadius.all(Radius.circular(20)),
-      color: Color(0xFF2C6171),
-    );
-
     return Container(
       width: deviceWidth * 0.75,
       height: deviceWidth * 0.75,
