@@ -6,6 +6,16 @@ class Grid extends StatelessWidget {
 
   Grid(this.deviceWidth);
 
+  Container sizedBoxChild({double height = 1, double width = 1}) {
+    return Container(
+        width: deviceWidth * width,
+        height: deviceWidth * height,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          color: Color(0xFF2C6171),
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     var boxDecoration = BoxDecoration(
@@ -27,20 +37,12 @@ class Grid extends StatelessWidget {
                 deviceWidth: deviceWidth,
                 gridIndex: 0,
               ),
-              SizedBox(
-                width: 5,
-                child: Container(
-                    height: deviceWidth * 0.215, decoration: boxDecoration),
-              ),
+              SizedBox(width: 5, child: sizedBoxChild(height: 0.215)),
               Cell(
                 deviceWidth: deviceWidth,
                 gridIndex: 1,
               ),
-              SizedBox(
-                width: 5,
-                child: Container(
-                    height: deviceWidth * 0.215, decoration: boxDecoration),
-              ),
+              SizedBox(width: 5, child: sizedBoxChild(height: 0.215)),
               Cell(
                 deviceWidth: deviceWidth,
                 gridIndex: 2,
@@ -51,8 +53,7 @@ class Grid extends StatelessWidget {
             padding: const EdgeInsets.all(2.5),
             child: SizedBox(
               height: 5,
-              child: Container(
-                  width: deviceWidth * 0.75, decoration: boxDecoration),
+              child: sizedBoxChild(width: 0.75),
             ),
           ),
           Row(
@@ -62,20 +63,12 @@ class Grid extends StatelessWidget {
                 deviceWidth: deviceWidth,
                 gridIndex: 3,
               ),
-              SizedBox(
-                width: 5,
-                child: Container(
-                    height: deviceWidth * 0.215, decoration: boxDecoration),
-              ),
+              SizedBox(width: 5, child: sizedBoxChild(height: 0.215)),
               Cell(
                 deviceWidth: deviceWidth,
                 gridIndex: 4,
               ),
-              SizedBox(
-                width: 5,
-                child: Container(
-                    height: deviceWidth * 0.215, decoration: boxDecoration),
-              ),
+              SizedBox(width: 5, child: sizedBoxChild(height: 0.215)),
               Cell(
                 deviceWidth: deviceWidth,
                 gridIndex: 5,
@@ -86,10 +79,7 @@ class Grid extends StatelessWidget {
             padding: const EdgeInsets.all(2.5),
             child: SizedBox(
               height: 5,
-              child: Container(
-                width: deviceWidth * 0.75,
-                decoration: boxDecoration,
-              ),
+              child: sizedBoxChild(width: 0.75),
             ),
           ),
           Row(
@@ -99,24 +89,12 @@ class Grid extends StatelessWidget {
                 deviceWidth: deviceWidth,
                 gridIndex: 6,
               ),
-              SizedBox(
-                width: 5,
-                child: Container(
-                  height: deviceWidth * 0.215,
-                  decoration: boxDecoration,
-                ),
-              ),
+              SizedBox(width: 5, child: sizedBoxChild(height: 0.215)),
               Cell(
                 deviceWidth: deviceWidth,
                 gridIndex: 7,
               ),
-              SizedBox(
-                width: 5,
-                child: Container(
-                  height: deviceWidth * 0.215,
-                  decoration: boxDecoration,
-                ),
-              ),
+              SizedBox(width: 5, child: sizedBoxChild(height: 0.215)),
               Cell(
                 deviceWidth: deviceWidth,
                 gridIndex: 8,
