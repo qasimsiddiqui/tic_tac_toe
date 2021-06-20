@@ -13,6 +13,8 @@ A Flutter project for the simple Tic Tac Toe game. ❌ :o:
 
 - [ ] Add support for online multiplayer
 
+&nbsp;
+## Screenshots
 <table style="padding:10px">
     <tr>
         <td><img src="./screenshots/1.png" alt="1" width = 280px height = 500px ></td>
