@@ -22,7 +22,8 @@ class _GameScreenState extends State<GameScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("GameScreen"),
+        centerTitle: true,
+        title: Text("Tic Tac Toe"),
       ),
       body: Consumer(
         builder: (context, watch, _) => Padding(
@@ -32,11 +33,11 @@ class _GameScreenState extends State<GameScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: watch(turnProvider).state == 1
-                        ? Colors.purple
-                        : Colors.blue[300]),
+                decoration: watch(turnProvider).state == 1
+                    ? BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.blue[300])
+                    : null,
                 padding: EdgeInsets.all(15),
                 child: Text('Player 1 :: X',
                     style: TextStyle(
@@ -46,12 +47,11 @@ class _GameScreenState extends State<GameScreen> {
               ),
               Center(child: Grid(deviceWidth)),
               Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: watch(turnProvider).state == 1
-                      ? Colors.blue[300]
-                      : Colors.purple,
-                ),
+                decoration: watch(turnProvider).state == 2
+                    ? BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.blue[300])
+                    : null,
                 padding: EdgeInsets.all(15),
                 child: Text('Player 2 :: O',
                     style: TextStyle(
@@ -59,7 +59,6 @@ class _GameScreenState extends State<GameScreen> {
                       fontWeight: FontWeight.w600,
                     )),
               ),
-              SizedBox(height: deviceWidth * 0.2),
             ],
           ),
         ),

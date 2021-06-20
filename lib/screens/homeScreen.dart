@@ -11,7 +11,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Screen"),
+        centerTitle: true,
+        title: Text("Tic Tac Toe"),
       ),
       body: Center(
         child: Padding(
@@ -26,7 +27,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       MaterialPageRoute(builder: (context) => GameScreen()),
                     );
                   },
-                  child: Text('Play!'))
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all<double>(12),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.blueGrey),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                    child: Text('Play!',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        )),
+                  ))
             ],
           ),
         ),
