@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tic_tac_toe/screens/gameScreen.dart';
+
+// Provider to manage player's turns.
+final turnProvider = StateProvider<int>((ref) => 1);
+// Provider to manage the game Grid
+final gridManager = StateProvider((ref) => List.filled(9, 0, growable: false));
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -29,8 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   style: ButtonStyle(
                     elevation: MaterialStateProperty.all<double>(12),
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.blueGrey),
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.blueGrey),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tic_tac_toe/screens/gameScreen.dart';
+import 'package:tic_tac_toe/screens/homeScreen.dart';
 import 'package:tic_tac_toe/utils/utils.dart';
 
 class Cell extends StatelessWidget {
@@ -47,8 +47,7 @@ class Cell extends StatelessWidget {
           List grid = watch(gridManager).state;
           int turn = watch(turnProvider).state;
 
-          if (grid[gridIndex] == 0)
-            context.read(gridManager).state[gridIndex] = turn;
+          if (grid[gridIndex] == 0) context.read(gridManager).state[gridIndex] = turn;
 
           if (turn == 1)
             context.read(turnProvider).state = 2;
