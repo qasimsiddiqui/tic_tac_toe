@@ -58,11 +58,20 @@ class Cell extends StatelessWidget {
           print(grid);
 
           int playerWon = checkWin(grid);
-          if (playerWon != 0)
+          if (playerWon != 0) {
             showDialog(
                 barrierDismissible: false,
                 context: context,
                 builder: (_) => showWinDialog(context, playerWon));
+            return;
+          }
+          if (!grid.contains(0)) {
+            showDialog(
+                barrierDismissible: false,
+                context: context,
+                builder: (_) => showDrawDialog(context));
+            return;
+          }
         },
       ),
     );
@@ -75,8 +84,23 @@ class Cell extends StatelessWidget {
         TextButton(
           child: Text('Restart'),
           onPressed: () {
-            context.read(gridManager).state =
-                new List.filled(9, 0, growable: false);
+            context.read(gridManager).state = new List.filled(9, 0, growable: false);
+            Navigator.of(context).pop();
+            Navigator.of(context).pop();
+          },
+        )
+      ],
+    );
+  }
+
+  AlertDialog showDrawDialog(BuildContext context) {
+    return AlertDialog(
+      title: Text("Game Draw!"),
+      actions: [
+        TextButton(
+          child: Text('Restart'),
+          onPressed: () {
+            context.read(gridManager).state = new List.filled(9, 0, growable: false);
             Navigator.of(context).pop();
             Navigator.of(context).pop();
           },

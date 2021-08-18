@@ -28,6 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               ElevatedButton(
                   onPressed: () {
+                    context.read(gridManager).state =
+                        new List.filled(9, 0, growable: false);
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => GameScreen()),
